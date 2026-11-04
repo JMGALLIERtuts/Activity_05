@@ -1,3 +1,3 @@
 ﻿# Activity_05
 Screenshot in Figma
-<img width="753" height="388" alt="image" src="https://github.com/user-attachments/assets/fe2cc1f5-2f63-4d7a-b1af-2b28dd64e7d5" />
+<img width="1347" height="644" alt="image" src="https://github.com/user-attachments/assets/f783fc6e-e7e1-4b10-8185-e17f869c1bb1" />
