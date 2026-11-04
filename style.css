@@ -1,0 +1,91 @@
+/* SneakerNest responsive landing page */
+:root {
+  --ink: #292929;
+  --muted: #747474;
+  --panel: #ebe8e8;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+
+.site-header {
+  height: 76px; padding: 0 clamp(24px, 9.5vw, 112px);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 28px; background: #fff; position: relative; z-index: 5;
+}
+.brand { display: inline-flex; align-items: center; flex-shrink: 0; }
+.brand img { display: block; width: 64px; height: auto; object-fit: contain; }
+.nav-links {
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(24px, 4.1vw, 48px); margin-left: auto;
+  margin-right: clamp(28px, 8.5vw, 100px);
+}
+.nav-links a { color: #171717; text-decoration: none; font-size: 13px; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: #bc00ba; }
+.login-btn, .shop-btn {
+  color: #fff; text-decoration: none; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+  white-space: nowrap; background: linear-gradient(110deg, #ff7055, #5558ff);
+}
+.login-btn { min-width: 106px; height: 43px; padding: 0 22px; border-radius: 8px; font-size: 15px; }
+.menu-toggle { display: none; border: 0; background: transparent; padding: 8px; cursor: pointer; }
+.menu-toggle span { display: block; width: 23px; height: 2px; margin: 5px 0; background: #222; }
+
+.hero {
+  min-height: 520px; height: calc(100vh - 76px); max-height: 760px;
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.hero-copy {
+  background: var(--panel); display: flex; align-items: center; justify-content: center;
+  padding: 64px clamp(28px, 6vw, 88px);
+}
+.copy-inner { width: min(100%, 460px); }
+h1 { margin: 0 0 22px; font-size: clamp(32px, 3.2vw, 44px); line-height: 1.1; letter-spacing: -.035em; }
+.description {
+  margin: 0 0 28px; max-width: 430px; color: var(--muted);
+  font-size: 15px; line-height: 1.55; letter-spacing: .12em;
+}
+.shop-btn { gap: 10px; padding: 12px 21px; border-radius: 7px; font-size: 18px; transition: transform .2s, box-shadow .2s; }
+.shop-btn span { font-size: 24px; line-height: 16px; }
+.shop-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px #6b4bed44; }
+.hero-visual { position: relative; min-width: 0; background: #08080b url("hero-sneakers.jpg") center center / cover no-repeat; }
+.image-credit { position: absolute; left: 50%; bottom: 22%; transform: translateX(-50%); font-size: 10px; color: #060a12; text-shadow: 0 1px 4px #fff5; }
+.below-fold { padding: 64px 24px; text-align: center; }
+.below-fold h2 { margin: 0 0 10px; }
+.below-fold p { margin: 0; color: var(--muted); }
+.below-fold.muted { background: #f5f3f3; }
+
+@media (max-width: 900px) {
+  .site-header { padding: 0 28px; gap: 18px; }
+  .nav-links { gap: 22px; margin-right: 18px; }
+  .hero { min-height: 470px; }
+  .hero-copy { padding: 48px 34px; }
+  .description { letter-spacing: .07em; font-size: 14px; }
+  .desktop-break { display: none; }
+}
+@media (max-width: 640px) {
+  .site-header { height: 68px; padding: 0 18px; gap: 12px; }
+  .brand img { width: 59px; }
+  .menu-toggle { display: block; margin-left: auto; order: 2; }
+  .login-btn { order: 3; min-width: auto; height: 38px; padding: 0 16px; font-size: 13px; }
+  .nav-links {
+    display: none; position: absolute; top: 68px; left: 0; right: 0; margin: 0;
+    padding: 18px 22px 22px; background: #fff; box-shadow: 0 10px 18px #00000012;
+    flex-direction: column; align-items: stretch; gap: 0;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px 4px; font-size: 14px; }
+  .hero { height: auto; min-height: 0; max-height: none; grid-template-columns: 1fr; }
+  .hero-copy { min-height: 335px; padding: 58px 28px 52px; justify-content: flex-start; }
+  .copy-inner { width: 100%; }
+  h1 { font-size: clamp(34px, 9vw, 43px); margin-bottom: 17px; }
+  .description { font-size: 13px; line-height: 1.65; letter-spacing: .07em; max-width: 440px; margin-bottom: 24px; }
+  .shop-btn { font-size: 16px; padding: 12px 18px; }
+  .hero-visual { min-height: 310px; background-position: center 52%; }
+  .image-credit { bottom: 14%; }
+  .below-fold { padding: 48px 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}

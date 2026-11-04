@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover premium sneakers and everyday essentials at SneakerNest.">
+  <title>SneakerNest | Shop Now</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="SneakerNest home">
+      <img src="sneakernest-logo.png" alt="SneakerNest logo">
+    </a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="#">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About Us</a>
+      <a href="#support">Support</a>
+    </nav>
+    <a class="login-btn" href="#login">Log in</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="copy-inner">
+          <h1 id="hero-title">Shop Now!</h1>
+          <p class="description">Discover premium products at unbeatable<br class="desktop-break">
+            prices, carefully curated to match your<br class="desktop-break">
+            lifestyle and everyday needs.</p>
+          <a class="shop-btn" href="#products">Shop Here <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Blue and white high-top sneakers">
+        <span class="image-credit">SneakerNest</span>
+      </div>
+    </section>
+    <section class="below-fold" id="products">
+      <h2>Find your next favorite pair</h2>
+      <p>Explore sneakers selected for your everyday style.</p>
+    </section>
+    <section class="below-fold muted" id="about">
+      <h2>About SneakerNest</h2><p>Premium style, curated for you.</p>
+    </section>
+    <section class="below-fold" id="support">
+      <h2>Need help?</h2><p>Contact our support team for assistance.</p>
+    </section>
+    <span id="login"></span>
+  </main>
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }));
+  </script>
+</body>
+</html>
